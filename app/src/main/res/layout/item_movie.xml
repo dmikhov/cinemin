@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_quarter"
+    android:layout_marginTop="@dimen/default_padding_quarter"
+    android:layout_marginEnd="@dimen/default_padding_quarter"
+    android:layout_marginBottom="@dimen/default_padding_quarter"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingTop="@dimen/default_padding_half"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingBottom="@dimen/default_padding_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movieImageView"
+            android:layout_width="42dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/movieTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_padding"
+            android:textColor="@color/colorPlainText"
+            android:textSize="@dimen/font_medium"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/movieDetailsTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movieImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lord Of The Rings" />
+
+        <TextView
+            android:id="@+id/movieDetailsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_padding"
+            android:textColor="@color/colorPlainText"
+            android:textSize="@dimen/font_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movieImageView"
+            app:layout_constraintTop_toBottomOf="@id/movieTitleTextView"
+            tools:text="Some Additional Details" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

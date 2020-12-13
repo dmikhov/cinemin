@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="default_padding_double">32dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_padding_half">8dp</dimen>
+    <dimen name="default_padding_quarter">4dp</dimen>
+
+    <dimen name="search_hint_margin">50dp</dimen>
+
+    <dimen name="toolbar_search_icon_size">22dp</dimen>
+    <dimen name="search_top_margin">32dp</dimen>
+
+    <dimen name="search_vertical_padding">10dp</dimen>
+
+    <dimen name="font_very_small">10sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_medium_small">14sp</dimen>
+    <dimen name="font_medium">16sp</dimen>
+    <dimen name="font_medium_large">18sp</dimen>
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="font_very_large">22sp</dimen>
+</resources>

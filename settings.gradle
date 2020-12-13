@@ -1,0 +1,7 @@
+include ':repository'
+include ':viewmodel'
+include ':usecases'
+include ':feature_about'
+include ':entities'
+include ':app'
+rootProject.name = "CinemaBudget"

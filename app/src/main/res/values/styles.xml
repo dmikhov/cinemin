@@ -1,0 +1,56 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FontSearch">
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/default_text_color_light</item>
+    </style>
+
+    <style name="TextPlain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/font_medium</item>
+        <item name="android:textColor">@color/colorPlainText</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextMovieDetails" parent="TextPlain">
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">@dimen/default_padding_quarter</item>
+    </style>
+
+    <style name="TextMoney" parent="TextPlain">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/font_medium_small</item>
+    </style>
+
+    <style name="TextMoney.Key">
+        <item name="android:textColor">@color/colorPlainText</item>
+    </style>
+
+    <style name="TextMoney.Budget">
+        <item name="android:textColor">@color/colorBudget</item>
+    </style>
+
+    <style name="TextMoney.Revenue">
+        <item name="android:textColor">@color/colorRevenue</item>
+    </style>
+
+    <style name="TextMovieDetailsTitle" parent="TextPlain">
+        <item name="android:maxLines">2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CardViewDefault">
+        <item name="cardCornerRadius">@dimen/default_padding_half</item>
+    </style>
+
+</resources>
