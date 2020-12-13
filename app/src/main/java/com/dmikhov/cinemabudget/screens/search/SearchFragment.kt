@@ -64,8 +64,6 @@ class SearchFragment : BaseFragment() {
         toolbar.setNavigationOnClickListener {
             mainActivity?.onBackPressed()
         }
-        val backgroundBitmap = ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()
-        backgroundImageView.setImageBitmap(backgroundBitmap?.blur()?.cropMargin())
         backgroundImageView.setStartCropMatrix()
 
         moviesRecyclerView.layoutManager = LinearLayoutManager(requireContext())

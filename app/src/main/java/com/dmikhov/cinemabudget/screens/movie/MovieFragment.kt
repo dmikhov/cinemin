@@ -83,10 +83,6 @@ class MovieFragment : BaseFragment() {
             mainActivity?.onBackPressed()
         }
         toolbar.title = movieTitle ?: getString(R.string.app_name)
-        val postersBgBitmap =
-            ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()?.blur()
-                ?.cropMargin()
-        placeholderBackgroundImageView.setImageBitmap(postersBgBitmap)
         placeholderBackgroundImageView.setStartCropMatrix()
         movieBackgroundImageView.visibility = View.GONE
         placeholderBackgroundImageView.visibility = View.VISIBLE

@@ -33,8 +33,6 @@ class AboutFragment: BaseFragment() {
         toolbar.setNavigationOnClickListener {
             mainActivity?.onBackPressed()
         }
-        val backgroundBitmap = ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()
-        backgroundImageView.setImageBitmap(backgroundBitmap?.blur()?.cropMargin())
         backgroundImageView.setStartCropMatrix()
         emailLayout.setOnClickListener {
             IntentUtils.openEmailApp(requireActivity(), getString(R.string.about_email))
