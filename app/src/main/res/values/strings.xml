@@ -37,5 +37,6 @@
     <string name="about_tmdb_url">https://www.themoviedb.org/</string>
 
     <string name="popup_error">Error</string>
-    <string name="popup_no_connection">No Internet connection available.</string>
+    <string name="popup_ok">OK</string>
+    <string name="popup_something_went_wrong">Something went wrong 😢</string>
 </resources>

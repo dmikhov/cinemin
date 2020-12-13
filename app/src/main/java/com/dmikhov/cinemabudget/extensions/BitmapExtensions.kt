@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.utils
+package com.dmikhov.cinemabudget.extensions
 
 import android.graphics.Bitmap
 

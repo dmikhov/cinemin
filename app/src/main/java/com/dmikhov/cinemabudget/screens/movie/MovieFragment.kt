@@ -10,8 +10,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.dmikhov.cinemabudget.R
+import com.dmikhov.cinemabudget.extensions.blur
+import com.dmikhov.cinemabudget.extensions.cropMargin
+import com.dmikhov.cinemabudget.extensions.setColoredKeyValueText
+import com.dmikhov.cinemabudget.extensions.setStartCropMatrix
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
-import com.dmikhov.cinemabudget.utils.*
+import com.dmikhov.cinemabudget.utils.DialogUtils
 import com.dmikhov.entity.MovieDetailsUI
 import com.dmikhov.viewmodel.MovieDetailViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
@@ -59,8 +63,17 @@ class MovieFragment : BaseFragment() {
                 progressIndicator.visibility = View.GONE
             }
         })
-        movieDetailsViewModel.movieDetailsLive.observe(viewLifecycleOwner, { movie ->
-            populateMovieDetails(movie)
+        movieDetailsViewModel.movieDetailsLive.observe(viewLifecycleOwner, { movie: MovieDetailsUI? ->
+            if (movie != null) {
+                populateMovieDetails(movie)
+            }
+        })
+        movieDetailsViewModel.onErrorInvoked.observeSingleEvent(viewLifecycleOwner, {
+            if (it == true) {
+                DialogUtils.showErrorDialog(requireContext(), getString(R.string.popup_something_went_wrong)) {
+                    mainActivity?.onBackPressed()
+                }
+            }
         })
     }
 

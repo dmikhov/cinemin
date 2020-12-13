@@ -9,9 +9,9 @@ import androidx.core.graphics.drawable.toBitmap
 import com.dmikhov.cinemabudget.R
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
 import com.dmikhov.cinemabudget.utils.IntentUtils
-import com.dmikhov.cinemabudget.utils.blur
-import com.dmikhov.cinemabudget.utils.cropMargin
-import com.dmikhov.cinemabudget.utils.setStartCropMatrix
+import com.dmikhov.cinemabudget.extensions.blur
+import com.dmikhov.cinemabudget.extensions.cropMargin
+import com.dmikhov.cinemabudget.extensions.setStartCropMatrix
 import kotlinx.android.synthetic.main.fragment_about.*
 
 

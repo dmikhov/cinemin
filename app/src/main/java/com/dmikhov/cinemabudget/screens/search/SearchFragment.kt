@@ -8,8 +8,8 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmikhov.cinemabudget.R
+import com.dmikhov.cinemabudget.extensions.*
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
-import com.dmikhov.cinemabudget.utils.*
 import com.dmikhov.viewmodel.SearchMoviesViewModel
 import kotlinx.android.synthetic.main.fragment_movie_search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel

@@ -7,6 +7,7 @@ import com.dmikhov.entities.movie.Credit
 import com.dmikhov.entity.MovieDetailsUI
 import com.dmikhov.usecases.CalculateWeightedPriceUseCase
 import com.dmikhov.usecases.MovieDetailsUseCase
+import com.dmikhov.utils.ConsumableSingleEventLiveData
 import com.dmikhov.utils.DateUtils
 import com.dmikhov.utils.toCurrency
 import kotlinx.coroutines.Dispatchers
@@ -18,6 +19,7 @@ class MovieDetailViewModel(
 ) : ViewModel() {
     val isLoadingLive = MutableLiveData<Boolean>()
     val movieDetailsLive = MutableLiveData<MovieDetailsUI>()
+    val onErrorInvoked = ConsumableSingleEventLiveData<Boolean>()
 
     fun loadDetails(movieId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -57,7 +59,7 @@ class MovieDetailViewModel(
                 )
                 movieDetailsLive.postValue(movieUI)
             } else {
-                movieDetailsLive.postValue(null)
+                onErrorInvoked.postValue(true)
             }
             isLoadingLive.postValue(false)
         }
