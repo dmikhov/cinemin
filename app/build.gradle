@@ -26,7 +26,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    dynamicFeatures = [':feature_about']
 }
 
 dependencies {
@@ -54,6 +53,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
+    // Koin
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 }
