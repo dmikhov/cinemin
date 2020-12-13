@@ -20,7 +20,7 @@ data class WebMovie(
     val tagline: String?,
     val overview: String?
 ) {
-    fun mapToMovie(): Movie? {
+    fun mapToBusiness(): Movie? {
         val posterUrl = posterPath?.let {
             WebConstants.MOVIEDB_IMAGE_PATTERN.format(posterPath)
         }
@@ -31,4 +31,4 @@ data class WebMovie(
     }
 }
 
-fun List<WebMovie>.mapToMovies(): List<Movie> = mapNotNull { it.mapToMovie() }
+fun List<WebMovie>.mapToBusiness(): List<Movie> = mapNotNull { it.mapToBusiness() }

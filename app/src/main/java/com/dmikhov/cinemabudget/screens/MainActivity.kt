@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openHomeFragment(movieId: Int?) {
-        Log.d("madtag", "MainActivity openHomeFragment movieId $movieId")
         val homeFragment = MovieFragment.newInstance(movieId)
         supportFragmentManager.beginTransaction()
             .add(R.id.rootFragmentContainer, homeFragment)

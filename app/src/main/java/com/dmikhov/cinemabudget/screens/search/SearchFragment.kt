@@ -40,7 +40,6 @@ class SearchFragment : BaseFragment() {
 
     private fun initObservers() {
         searchMovieViewModel.moviesLive.observe(viewLifecycleOwner, { movies ->
-            Log.d("madtag", "moviesLive $movies")
             if (movies.isNotEmpty()) {
                 moviesRecyclerView.visibility = View.VISIBLE
                 errorLayout.visibility = View.GONE
@@ -79,7 +78,6 @@ class SearchFragment : BaseFragment() {
         }
         searchEditText.showKeyboard()
         moviesAdapter.onMovieClicked = { movie ->
-            Log.d("madtag", "Clicked on: ${movie.title}")
             searchEditText.hideKeyboard()
             mainActivity?.openHomeFragment(movie.id)
         }

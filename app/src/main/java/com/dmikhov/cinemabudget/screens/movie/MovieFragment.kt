@@ -97,7 +97,6 @@ class MovieFragment : BaseFragment() {
             movie.director ?: getString(R.string.na),
             valueColor
         )
-        directorTextView.visibility = View.GONE // remove for now
         val runtime = if (movie.runtime != null) {
             getString(R.string.format_runtime, movie.runtime.toString())
         } else {
