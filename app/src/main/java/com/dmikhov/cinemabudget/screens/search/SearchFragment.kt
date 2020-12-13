@@ -2,16 +2,12 @@ package com.dmikhov.cinemabudget.screens.search
 
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmikhov.cinemabudget.R
-import com.dmikhov.cinemabudget.screens.MainActivity
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
 import com.dmikhov.cinemabudget.utils.*
 import com.dmikhov.viewmodel.SearchMoviesViewModel
@@ -19,7 +15,6 @@ import kotlinx.android.synthetic.main.fragment_movie_search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : BaseFragment() {
-    private val mainActivity get() = activity as? MainActivity
     private val searchMovieViewModel: SearchMoviesViewModel by viewModel()
     private val moviesAdapter by lazy { MoviesAdapter() }
     private val mainHandler = Handler()
@@ -63,8 +58,14 @@ class SearchFragment : BaseFragment() {
     }
 
     private fun populateViews() {
-        val originalBitmap = ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()
-        backgroundImageView.setImageBitmap(originalBitmap?.blur()?.cropMargin())
+        mainActivity?.setSupportActionBar(toolbar)
+        mainActivity?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        setHasOptionsMenu(true)
+        toolbar.setNavigationOnClickListener {
+            mainActivity?.onBackPressed()
+        }
+        val backgroundBitmap = ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()
+        backgroundImageView.setImageBitmap(backgroundBitmap?.blur()?.cropMargin())
         backgroundImageView.setStartCropMatrix()
 
         moviesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -79,8 +80,22 @@ class SearchFragment : BaseFragment() {
         searchEditText.showKeyboard()
         moviesAdapter.onMovieClicked = { movie ->
             searchEditText.hideKeyboard()
-            mainActivity?.openHomeFragment(movie.id)
+            mainActivity?.openHomeFragment(movie.id, movie.title)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_item_about -> {
+                searchEditText.hideKeyboard()
+                mainActivity?.openAboutFragment()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {

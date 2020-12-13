@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="FontSearch">
@@ -51,6 +53,14 @@
 
     <style name="CardViewDefault">
         <item name="cardCornerRadius">@dimen/default_padding_half</item>
+    </style>
+
+    <style name="DetailsToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="navigationIcon">@drawable/ic_arrow_back</item>
+        <item name="titleTextColor">@color/colorWhite</item>
     </style>
 
 </resources>

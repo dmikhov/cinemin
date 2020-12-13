@@ -3,10 +3,7 @@ package com.dmikhov.cinemabudget.screens.movie
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.bumptech.glide.Glide
@@ -16,7 +13,6 @@ import com.dmikhov.cinemabudget.R
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
 import com.dmikhov.cinemabudget.utils.*
 import com.dmikhov.entity.MovieDetailsUI
-import com.dmikhov.utils.DateUtils
 import com.dmikhov.viewmodel.MovieDetailViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,6 +21,7 @@ class MovieFragment : BaseFragment() {
     private lateinit var animationComposer: MovieFragmentAnimationComposer
     private val movieDetailsViewModel: MovieDetailViewModel by viewModel()
     private var movieId: Int? = null
+    private var movieTitle: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +42,7 @@ class MovieFragment : BaseFragment() {
     private fun initData() {
         arguments?.apply {
             movieId = getInt(ARG_MOVIE_ID)
+            movieTitle = getString(ARG_MOVIE_TITLE)
         }
         movieId?.let {
             if (it != UNKNOWN_MOVIE_ID) {
@@ -67,6 +65,11 @@ class MovieFragment : BaseFragment() {
     }
 
     private fun populateViews() {
+        mainActivity?.setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            mainActivity?.onBackPressed()
+        }
+        toolbar.title = movieTitle ?: getString(R.string.app_name)
         val postersBgBitmap =
             ContextCompat.getDrawable(requireContext(), R.drawable.img_posters)?.toBitmap()?.blur()
                 ?.cropMargin()
@@ -163,11 +166,13 @@ class MovieFragment : BaseFragment() {
 
     companion object {
         private const val ARG_MOVIE_ID = "ARG_MOVIE_ID"
+        private const val ARG_MOVIE_TITLE = "ARG_MOVIE_TITLE"
         private const val UNKNOWN_MOVIE_ID = -1
 
-        fun newInstance(movieId: Int? = null): MovieFragment = MovieFragment().apply {
+        fun newInstance(movieId: Int? = null, movieTitle: String? = null): MovieFragment = MovieFragment().apply {
             arguments = Bundle().apply {
                 putInt(ARG_MOVIE_ID, movieId ?: UNKNOWN_MOVIE_ID)
+                putString(ARG_MOVIE_TITLE, movieTitle)
             }
         }
     }

@@ -28,5 +28,14 @@
     <string name="start_typing_hint">Just start typing the title of the movie you want and we\'ll find information about it for you 😉</string>
     <string name="error_no_result">Unfortunately we cannot find the movie you are searching for 😔</string>
 
+    <string name="about_title">About App</string>
+    <string name="about_privacy_policy">Privacy Policy</string>
+    <string name="about_email">madlessdev@gmail.com</string>
+    <string name="about_email_selector_title">Select app</string>
+    <string name="about_icons8_url">https://icons8.com/</string>
+    <string name="about_flaticon_url">https://www.flaticon.com/</string>
+    <string name="about_tmdb_url">https://www.themoviedb.org/</string>
 
+    <string name="popup_error">Error</string>
+    <string name="popup_no_connection">No Internet connection available.</string>
 </resources>
