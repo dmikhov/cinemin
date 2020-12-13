@@ -9,8 +9,8 @@ import com.dmikhov.usecases.repository.IMoneyRepository
 class CalculateWeightedPriceUseCase(
     private val moneyRepository: IMoneyRepository
 ) {
-    fun calculateWeightedPrice(price: Double?, startYear: Int, endYear: Int): Double? {
-        if (price == null) {
+    fun calculateWeightedPrice(price: Double?, startYear: Int?, endYear: Int?): Double? {
+        if (price == null || startYear == null || endYear == null) {
             return null
         }
         val inflationList = moneyRepository.getUSDInflation()

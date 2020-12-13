@@ -85,10 +85,20 @@ class MovieFragment : BaseFragment() {
         weightedBudgetTextView.text = movie.weightedBudget ?: getString(R.string.na)
         weightedRevenueTextView.text = movie.weightedRevenue ?: getString(R.string.na)
         titleTextView.text = movie.title
-        moneyDetailsOverlayTextView.text =
-            getString(R.string.format_in_dollars_overlay, movie.releaseYear)
-        weightedMoneyDetailsOverlayTextView.text =
-            getString(R.string.format_in_dollars_overlay, movie.currentYear)
+        if (movie.releaseYear != null) {
+            moneyDetailsOverlayView.visibility = View.VISIBLE
+            moneyDetailsOverlayTextView.text =
+                getString(R.string.format_in_dollars_overlay, movie.releaseYear)
+        } else {
+            moneyDetailsOverlayView.visibility = View.GONE
+        }
+        if (movie.currentYear != null) {
+            weightedMoneyDetailsOverlayView.visibility = View.VISIBLE
+            weightedMoneyDetailsOverlayTextView.text =
+                getString(R.string.format_in_dollars_overlay, movie.currentYear)
+        } else {
+            weightedMoneyDetailsOverlayView.visibility = View.GONE
+        }
         releaseTextView.setColoredKeyValueText(
             getString(R.string.key_release),
             keyColor,
@@ -115,7 +125,7 @@ class MovieFragment : BaseFragment() {
         ratingTextView.setColoredKeyValueText(
             getString(R.string.key_rating),
             keyColor,
-            movie.rating?.toString() ?: getString(R.string.na),
+            movie.rating ?: getString(R.string.na),
             valueColor
         )
         if (!movie.overview.isNullOrEmpty()) {
@@ -124,23 +134,31 @@ class MovieFragment : BaseFragment() {
         } else {
             descriptionCardView.visibility = View.GONE
         }
-        Glide.with(this)
-            .asBitmap()
-            .load(movie.posterUrl)
-            .into(object : CustomTarget<Bitmap>() {
-                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                    posterImageView.setImageBitmap(resource)
-                    movieBackgroundImageView.setImageBitmap(resource.blur())
-                    movieBackgroundImageView.visibility = View.VISIBLE
-                    placeholderBackgroundImageView.visibility = View.GONE
-                    animationComposer.animateMovieDetailsAppearing()
-                }
+        if (movie.posterUrl != null) {
+            Glide.with(this)
+                .asBitmap()
+                .load(movie.posterUrl)
+                .into(object : CustomTarget<Bitmap>() {
+                    override fun onResourceReady(
+                        resource: Bitmap,
+                        transition: Transition<in Bitmap>?
+                    ) {
+                        posterImageView.setImageBitmap(resource)
+                        movieBackgroundImageView.setImageBitmap(resource.blur())
+                        movieBackgroundImageView.visibility = View.VISIBLE
+                        placeholderBackgroundImageView.visibility = View.GONE
+                        animationComposer.animateMovieDetailsAppearing()
+                    }
 
-                override fun onLoadCleared(placeholder: Drawable?) {
-                    posterImageView?.setImageBitmap(null)
-                    movieBackgroundImageView?.setImageBitmap(null)
-                }
-            })
+                    override fun onLoadCleared(placeholder: Drawable?) {
+                        posterImageView?.setImageBitmap(null)
+                        movieBackgroundImageView?.setImageBitmap(null)
+                    }
+                })
+        } else {
+            posterImageView.setImageBitmap(null) // set placeholder
+            animationComposer.animateMovieDetailsAppearing()
+        }
     }
 
     companion object {

@@ -24,19 +24,29 @@ data class WebMovie(
         val posterUrl = posterPath?.let {
             WebConstants.MOVIEDB_IMAGE_PATTERN.format(posterPath)
         }
-        val nullableBudget: Int? = if (budget == 0) {
+        val nullableBudget = if (budget == 0) {
             null
         } else {
             budget
         }
-        val nullableRevenue: Int? = if (revenue == 0) {
+        val nullableRevenue = if (revenue == 0) {
             null
         } else {
             revenue
         }
+        val nullableRelease = if (releaseDate.isNullOrEmpty()) {
+            null
+        } else {
+            releaseDate
+        }
+        val nullableRating = if (rating == 0F) {
+            null
+        } else {
+            rating
+        }
         return Movie(
-            id, title, posterUrl, releaseDate, nullableBudget, nullableRevenue,
-            runtime, rating, adult, tagline, overview
+            id, title, posterUrl, nullableRelease, nullableBudget, nullableRevenue,
+            runtime, nullableRating, adult, tagline, overview
         )
     }
 }

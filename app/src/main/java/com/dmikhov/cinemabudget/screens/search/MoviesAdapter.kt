@@ -37,8 +37,13 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
             val movie = movies[adapterPosition]
             Glide.with(movieImageView).load(movie.posterUrl).into(movieImageView)
             movieTitleTextView.text = movie.title
-            movieDetailsTextView.text =
-                context.getString(R.string.format_release, movie.releaseDate)
+            if (movie.releaseDate.isNullOrEmpty()) {
+                movieDetailsTextView.visibility = View.GONE
+            } else {
+                movieDetailsTextView.visibility = View.VISIBLE
+                movieDetailsTextView.text =
+                    context.getString(R.string.format_release, movie.releaseDate)
+            }
             movieLayout.setOnClickListener {
                 onMovieClicked?.invoke(movie)
             }

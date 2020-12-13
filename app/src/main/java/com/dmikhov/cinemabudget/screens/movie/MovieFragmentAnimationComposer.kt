@@ -88,9 +88,6 @@ class MovieFragmentAnimationComposer(
     fun animateMovieDetailsAppearing() = with(fragmentView) {
         val defaultPadding = resources.getDimension(R.dimen.default_padding).toInt()
 
-        moneyDetailsOverlayView.visibility = View.VISIBLE
-        weightedMoneyDetailsOverlayView.visibility = View.VISIBLE
-
         val constraintSet = ConstraintSet()
         with(constraintSet) {
             clone(movieConstraintLayout)

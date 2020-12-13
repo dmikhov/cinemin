@@ -83,6 +83,11 @@ class SearchFragment : BaseFragment() {
         }
     }
 
+    override fun onDestroyView() {
+        searchEditText?.hideKeyboard()
+        super.onDestroyView()
+    }
+
     companion object {
         private const val SEARCH_DELAY = 500L
 

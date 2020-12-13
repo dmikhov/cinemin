@@ -42,7 +42,7 @@ class MovieDetailViewModel(
                     movie.title,
                     movie.posterUrl,
                     movie.releaseDate,
-                    releaseYear.toString(),
+                    releaseYear?.toString(),
                     currentYear.toString(),
                     budget,
                     revenue,
