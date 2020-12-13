@@ -1,7 +1,7 @@
 package com.dmikhov.cinemabudget.screens.search
 
 import androidx.recyclerview.widget.DiffUtil
-import com.dmikhov.entities.Movie
+import com.dmikhov.entities.movie.Movie
 
 class SearchDiffUtil(
     private val oldMovies: MutableList<Movie>,

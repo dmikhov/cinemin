@@ -1,16 +1,19 @@
 package com.dmikhov.repository.di
 
 import com.dmikhov.repository.BuildConfig
+import com.dmikhov.repository.MoneyRepository
 import com.dmikhov.repository.MoviesRepository
 import com.dmikhov.repository.web.IWebMovieService
 import com.dmikhov.repository.web.retrofit.RetrofitMovieServiceApi
 import com.dmikhov.repository.web.WebConstants
 import com.dmikhov.repository.web.retrofit.RetrofitMovieService
+import com.dmikhov.usecases.repository.IMoneyRepository
 import com.dmikhov.usecases.repository.IMoviesRepository
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Converter
 import retrofit2.Retrofit
@@ -51,5 +54,8 @@ val apiModule = module {
 val repositoryModule = module {
     single<IMoviesRepository> {
         MoviesRepository(get())
+    }
+    single<IMoneyRepository> {
+        MoneyRepository(androidContext())
     }
 }

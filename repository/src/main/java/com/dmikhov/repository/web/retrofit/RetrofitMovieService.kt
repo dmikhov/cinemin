@@ -1,8 +1,8 @@
 package com.dmikhov.repository.web.retrofit
 
 import com.dmikhov.usecases.entities.ErrorCodes
-import com.dmikhov.entities.Movie
-import com.dmikhov.entities.MovieCredits
+import com.dmikhov.entities.movie.Movie
+import com.dmikhov.entities.movie.MovieCredits
 import com.dmikhov.usecases.entities.Result
 import com.dmikhov.repository.web.IWebMovieService
 import com.dmikhov.repository.web.WebConstants

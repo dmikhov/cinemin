@@ -1,6 +1,6 @@
 package com.dmikhov.repository.web.entities
 
-import com.dmikhov.entities.Credit
+import com.dmikhov.entities.movie.Credit
 import com.dmikhov.repository.web.WebConstants
 import com.google.gson.annotations.SerializedName
 

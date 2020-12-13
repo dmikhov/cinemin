@@ -1,6 +1,6 @@
 package com.dmikhov.repository.web.entities
 
-import com.dmikhov.entities.Movie
+import com.dmikhov.entities.movie.Movie
 import com.dmikhov.repository.web.WebConstants
 import com.google.gson.annotations.SerializedName
 

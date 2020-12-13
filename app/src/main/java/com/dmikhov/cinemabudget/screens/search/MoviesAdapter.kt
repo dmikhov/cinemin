@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dmikhov.cinemabudget.R
-import com.dmikhov.entities.Movie
+import com.dmikhov.entities.movie.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {

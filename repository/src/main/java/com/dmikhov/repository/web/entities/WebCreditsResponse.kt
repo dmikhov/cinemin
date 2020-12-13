@@ -1,6 +1,6 @@
 package com.dmikhov.repository.web.entities
 
-import com.dmikhov.entities.MovieCredits
+import com.dmikhov.entities.movie.MovieCredits
 
 data class WebCreditsResponse (
     val id: Int,

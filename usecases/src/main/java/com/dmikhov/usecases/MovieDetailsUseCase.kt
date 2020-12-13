@@ -1,6 +1,6 @@
 package com.dmikhov.usecases
 
-import com.dmikhov.entities.FullMovieDetails
+import com.dmikhov.entities.movie.FullMovieDetails
 import com.dmikhov.usecases.entities.Result
 import com.dmikhov.usecases.repository.IMoviesRepository
 

@@ -1,7 +1,7 @@
 package com.dmikhov.repository.web
 
-import com.dmikhov.entities.Movie
-import com.dmikhov.entities.MovieCredits
+import com.dmikhov.entities.movie.Movie
+import com.dmikhov.entities.movie.MovieCredits
 import com.dmikhov.usecases.entities.Result
 
 interface IWebMovieService {

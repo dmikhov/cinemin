@@ -1,4 +1,4 @@
-package com.dmikhov.entities
+package com.dmikhov.entities.movie
 
 data class Movie (
     val id: Int,
