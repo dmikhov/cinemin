@@ -1,7 +1,7 @@
 package com.dmikhov.usecases
 
 import com.dmikhov.entities.Movie
-import com.dmikhov.entities.Result
+import com.dmikhov.usecases.entities.Result
 import com.dmikhov.usecases.repository.IMoviesRepository
 
 class SearchMoviesUseCase (

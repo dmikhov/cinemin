@@ -1,4 +1,4 @@
-package com.dmikhov.entities
+package com.dmikhov.usecases.entities
 
 object ErrorCodes {
     const val ERROR_SEARCH_FAILED = 1

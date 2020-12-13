@@ -1,4 +1,4 @@
-package com.dmikhov.entities
+package com.dmikhov.usecases.entities
 
 class Result<T> (
     val payload: T? = null,

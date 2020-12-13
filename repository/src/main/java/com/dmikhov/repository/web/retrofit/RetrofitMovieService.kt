@@ -1,10 +1,9 @@
 package com.dmikhov.repository.web.retrofit
 
-import android.util.Log
-import com.dmikhov.entities.ErrorCodes
+import com.dmikhov.usecases.entities.ErrorCodes
 import com.dmikhov.entities.Movie
 import com.dmikhov.entities.MovieCredits
-import com.dmikhov.entities.Result
+import com.dmikhov.usecases.entities.Result
 import com.dmikhov.repository.web.IWebMovieService
 import com.dmikhov.repository.web.WebConstants
 import com.dmikhov.repository.web.entities.mapToMovies
