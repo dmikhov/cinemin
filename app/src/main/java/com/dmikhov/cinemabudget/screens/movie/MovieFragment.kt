@@ -76,10 +76,10 @@ class MovieFragment : BaseFragment() {
     private fun populateMovieDetails(movie: MovieDetailsUI) {
         val keyColor = ContextCompat.getColor(requireContext(), R.color.colorPlainText)
         val valueColor = ContextCompat.getColor(requireContext(), R.color.colorAccentText)
-        budgetTextView.text = movie.budget
-        revenueTextView.text = movie.revenue
-        weightedBudgetTextView.text = movie.weightedBudget
-        weightedRevenueTextView.text = movie.weightedRevenue
+        budgetTextView.text = movie.budget ?: getString(R.string.na)
+        revenueTextView.text = movie.revenue ?: getString(R.string.na)
+        weightedBudgetTextView.text = movie.weightedBudget ?: getString(R.string.na)
+        weightedRevenueTextView.text = movie.weightedRevenue ?: getString(R.string.na)
         titleTextView.text = movie.title
         moneyDetailsOverlayTextView.text =
             getString(R.string.format_in_dollars_overlay, movie.releaseYear)

@@ -32,11 +32,11 @@ class MovieDetailViewModel(
                 val releaseYear = DateUtils.getYearFromReleaseDate(movie.releaseDate)
                 val currentYear = DateUtils.getCurrentYear()
                 val weightedBudget = calculateWeightedPriceUseCase.calculateWeightedPrice(
-                    movie.budget?.toDouble() ?: 0.0, releaseYear, currentYear
-                ).toCurrency()
+                    movie.budget?.toDouble(), releaseYear, currentYear
+                )?.toCurrency()
                 val weightedRevenue = calculateWeightedPriceUseCase.calculateWeightedPrice(
-                    movie.revenue?.toDouble() ?: 0.0, releaseYear, currentYear
-                ).toCurrency()
+                    movie.revenue?.toDouble(), releaseYear, currentYear
+                )?.toCurrency()
                 val movieUI = MovieDetailsUI(
                     movie.id,
                     movie.title,
