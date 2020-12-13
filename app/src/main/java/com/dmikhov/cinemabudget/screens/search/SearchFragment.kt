@@ -81,10 +81,6 @@ class SearchFragment : BaseFragment() {
             searchEditText.hideKeyboard()
             mainActivity?.openHomeFragment(movie.id)
         }
-//        Handler().postDelayed({
-//            searchEditText.setText("Harry Potter")
-//            searchEditText.setSelection(searchEditText.text?.toString()?.length ?: 0)
-//        }, 500L) // todo remove
     }
 
     companion object {

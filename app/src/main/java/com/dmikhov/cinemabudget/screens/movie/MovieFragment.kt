@@ -54,8 +54,12 @@ class MovieFragment : BaseFragment() {
     }
 
     private fun initObservers() {
-        movieDetailsViewModel.isLoadingLive.observe(viewLifecycleOwner, {
-
+        movieDetailsViewModel.isLoadingLive.observe(viewLifecycleOwner, { isLoading ->
+            if (isLoading == true) {
+                progressIndicator.visibility = View.VISIBLE
+            } else {
+                progressIndicator.visibility = View.GONE
+            }
         })
         movieDetailsViewModel.movieDetailsLive.observe(viewLifecycleOwner, { movie ->
             populateMovieDetails(movie)

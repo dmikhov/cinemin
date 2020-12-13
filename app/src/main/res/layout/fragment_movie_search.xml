@@ -79,48 +79,43 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/hintLayout"
+        style="@style/CardViewDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_padding_double"
         android:layout_marginTop="@dimen/default_padding"
         android:layout_marginEnd="@dimen/default_padding_double"
-        app:cardCornerRadius="8dp"
+        android:visibility="visible"
         app:contentPadding="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchLayout">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/TextPlain"
             android:gravity="center"
-            android:text="@string/start_typing_hint"
-            android:textColor="@color/colorHintText"
-            android:textSize="@dimen/font_medium"
-            android:visibility="visible" />
+            android:text="@string/start_typing_hint" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/errorLayout"
+        style="@style/CardViewDefault"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_padding_double"
-        android:layout_marginTop="@dimen/search_hint_margin"
+        android:layout_marginTop="@dimen/default_padding"
         android:layout_marginEnd="@dimen/default_padding_double"
-        app:cardCornerRadius="8dp"
+        android:visibility="gone"
+        app:contentPadding="@dimen/default_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchLayout">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/TextPlain"
             android:gravity="center"
-            android:text="@string/error_no_result"
-            android:textColor="@color/colorHintText"
-            android:textSize="@dimen/font_medium"
-            android:visibility="gone" />
+            android:text="@string/error_no_result" />
 
     </androidx.cardview.widget.CardView>
 
