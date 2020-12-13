@@ -18,7 +18,7 @@
     <string name="key_release">Release:\u0020</string>
     <string name="key_director">Director:\u0020</string>
     <string name="key_runtime">Runtime:\u0020</string>
-    <string name="key_imdb_rating">IMDB Rating:\u0020</string>
+    <string name="key_rating">Rating:\u0020</string>
     <string name="key_budget">Budget:\u0020</string>
     <string name="key_revenue">Revenue:\u0020</string>
 

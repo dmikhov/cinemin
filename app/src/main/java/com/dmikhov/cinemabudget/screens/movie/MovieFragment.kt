@@ -3,25 +3,20 @@ package com.dmikhov.cinemabudget.screens.movie
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.transition.ChangeBounds
-import android.transition.TransitionManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.dmikhov.cinemabudget.R
-import com.dmikhov.cinemabudget.screens.MainActivity
-import com.dmikhov.cinemabudget.animation.LittleBounceInterpolator
 import com.dmikhov.cinemabudget.screens.base.BaseFragment
 import com.dmikhov.cinemabudget.utils.*
-import com.dmikhov.entities.Movie
+import com.dmikhov.entity.MovieDetailsUI
+import com.dmikhov.utils.DateUtils
 import com.dmikhov.viewmodel.MovieDetailViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,7 +31,6 @@ class MovieFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d("madtag", "MovieFragment onCreateView")
         initData()
         return inflater.inflate(R.layout.fragment_movie, container, false)
     }
@@ -79,18 +73,18 @@ class MovieFragment : BaseFragment() {
         animationComposer.hideMovieDetails()
     }
 
-    private fun populateMovieDetails(movie: Movie) {
+    private fun populateMovieDetails(movie: MovieDetailsUI) {
         val keyColor = ContextCompat.getColor(requireContext(), R.color.colorPlainText)
         val valueColor = ContextCompat.getColor(requireContext(), R.color.colorAccentText)
-        budgetTextView.text = movie.budget?.toCurrency()
-        revenueTextView.text = movie.revenue?.toCurrency()
-        weightedBudgetTextView.text = movie.budget?.toCurrency()
-        weightedRevenueTextView.text = movie.revenue?.toCurrency()
+        budgetTextView.text = movie.budget
+        revenueTextView.text = movie.revenue
+        weightedBudgetTextView.text = movie.weightedBudget
+        weightedRevenueTextView.text = movie.weightedRevenue
         titleTextView.text = movie.title
         moneyDetailsOverlayTextView.text =
-            getString(R.string.format_in_dollars_overlay, movie.releaseDate?.take(4))
+            getString(R.string.format_in_dollars_overlay, movie.releaseYear)
         weightedMoneyDetailsOverlayTextView.text =
-            getString(R.string.format_in_dollars_overlay, DateUtils.getCurrentYear())
+            getString(R.string.format_in_dollars_overlay, movie.currentYear)
         releaseTextView.setColoredKeyValueText(
             getString(R.string.key_release),
             keyColor,
@@ -100,7 +94,7 @@ class MovieFragment : BaseFragment() {
         directorTextView.setColoredKeyValueText(
             getString(R.string.key_director),
             keyColor,
-            "K. Nolan",
+            movie.director ?: getString(R.string.na),
             valueColor
         )
         directorTextView.visibility = View.GONE // remove for now
@@ -116,7 +110,7 @@ class MovieFragment : BaseFragment() {
             valueColor
         )
         ratingTextView.setColoredKeyValueText(
-            getString(R.string.key_imdb_rating),
+            getString(R.string.key_rating),
             keyColor,
             movie.rating?.toString() ?: getString(R.string.na),
             valueColor

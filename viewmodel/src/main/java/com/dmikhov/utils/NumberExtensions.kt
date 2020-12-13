@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.utils
+package com.dmikhov.utils
 
 import java.text.NumberFormat
 import java.util.*
