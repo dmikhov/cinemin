@@ -1,13 +1,11 @@
-package com.dmikhov.cinemabudget.screens
+package com.dmikhov.cinemin.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import com.dmikhov.cinemabudget.R
-import com.dmikhov.cinemabudget.screens.about.AboutFragment
-import com.dmikhov.cinemabudget.screens.movie.MovieFragment
-import com.dmikhov.cinemabudget.screens.search.SearchFragment
+import com.dmikhov.cinemin.R
+import com.dmikhov.cinemin.screens.about.AboutFragment
+import com.dmikhov.cinemin.screens.movie.MovieFragment
+import com.dmikhov.cinemin.screens.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

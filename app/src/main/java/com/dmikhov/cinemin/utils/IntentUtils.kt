@@ -1,9 +1,9 @@
-package com.dmikhov.cinemabudget.utils
+package com.dmikhov.cinemin.utils
 
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import com.dmikhov.cinemabudget.R
+import com.dmikhov.cinemin.R
 
 object IntentUtils {
     fun openInWebBrowser(activity: Activity, url: String) {

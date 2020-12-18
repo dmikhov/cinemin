@@ -1,8 +1,8 @@
-package com.dmikhov.cinemabudget.utils
+package com.dmikhov.cinemin.utils
 
 import android.app.AlertDialog
 import android.content.Context
-import com.dmikhov.cinemabudget.R
+import com.dmikhov.cinemin.R
 
 object DialogUtils {
     fun showErrorDialog(context: Context, message: String, okPressed: (() -> Unit)? = null) {

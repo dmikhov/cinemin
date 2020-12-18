@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.screens.search
+package com.dmikhov.cinemin.screens.search
 
 import androidx.recyclerview.widget.DiffUtil
 import com.dmikhov.entities.movie.Movie

@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.dmikhov.cinemabudget"
+        applicationId "com.dmikhov.cinemin"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

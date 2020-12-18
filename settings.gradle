@@ -3,4 +3,4 @@ include ':viewmodel'
 include ':usecases'
 include ':entities'
 include ':app'
-rootProject.name = "CinemaBudget"
+rootProject.name = "Cinemin"

@@ -1,11 +1,11 @@
-package com.dmikhov.cinemabudget.screens.movie
+package com.dmikhov.cinemin.screens.movie
 
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintSet
-import com.dmikhov.cinemabudget.R
-import com.dmikhov.cinemabudget.animation.LittleBounceInterpolator
+import com.dmikhov.cinemin.R
+import com.dmikhov.cinemin.animation.LittleBounceInterpolator
 import kotlinx.android.synthetic.main.fragment_movie.view.*
 
 class MovieFragmentAnimationComposer(

@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.extensions
+package com.dmikhov.cinemin.extensions
 
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan

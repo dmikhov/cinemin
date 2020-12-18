@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget
+package com.dmikhov.cinemin
 
 import android.app.Application
 import com.dmikhov.di.viewModelModule
@@ -9,13 +9,13 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class CinemaBudgetApp: Application() {
+class CineminApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
         startKoin {
             androidLogger()
-            androidContext(this@CinemaBudgetApp)
+            androidContext(this@CineminApp)
             modules(modules)
         }
     }

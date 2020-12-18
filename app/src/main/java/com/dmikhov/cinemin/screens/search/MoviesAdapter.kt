@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.screens.search
+package com.dmikhov.cinemin.screens.search
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dmikhov.cinemabudget.R
+import com.dmikhov.cinemin.R
 import com.dmikhov.entities.movie.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 

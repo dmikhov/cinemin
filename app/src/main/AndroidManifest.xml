@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dmikhov.cinemabudget">
+    package="com.dmikhov.cinemin">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -11,8 +11,8 @@
         android:roundIcon="@drawable/ic_cinemin"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".CinemaBudgetApp">
-        <activity android:name=".screens.MainActivity">
+        android:name="com.dmikhov.cinemin.CineminApp">
+        <activity android:name="com.dmikhov.cinemin.screens.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

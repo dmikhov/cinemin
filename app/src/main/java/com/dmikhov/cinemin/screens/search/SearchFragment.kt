@@ -1,15 +1,13 @@
-package com.dmikhov.cinemabudget.screens.search
+package com.dmikhov.cinemin.screens.search
 
 import android.os.Bundle
 import android.os.Handler
 import android.view.*
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.toBitmap
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dmikhov.cinemabudget.R
-import com.dmikhov.cinemabudget.extensions.*
-import com.dmikhov.cinemabudget.screens.base.BaseFragment
+import com.dmikhov.cinemin.R
+import com.dmikhov.cinemin.extensions.*
+import com.dmikhov.cinemin.screens.base.BaseFragment
 import com.dmikhov.viewmodel.SearchMoviesViewModel
 import kotlinx.android.synthetic.main.fragment_movie_search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel

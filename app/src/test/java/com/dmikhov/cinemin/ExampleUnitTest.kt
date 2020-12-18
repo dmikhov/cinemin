@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget
+package com.dmikhov.cinemin
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.dmikhov.cinemabudget.animation
+package com.dmikhov.cinemin.animation
 
 import android.view.animation.Interpolator
 import kotlin.math.cos
