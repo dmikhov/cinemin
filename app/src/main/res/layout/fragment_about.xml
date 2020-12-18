@@ -43,8 +43,7 @@
             android:id="@+id/aboutConstraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:clipToPadding="false">
+            android:paddingBottom="@dimen/default_padding_double">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/descriptionLayout"
@@ -170,7 +169,6 @@
                 android:layout_marginStart="@dimen/default_padding_double"
                 android:layout_marginTop="@dimen/default_padding"
                 android:layout_marginEnd="@dimen/default_padding_double"
-                android:layout_marginBottom="@dimen/default_padding_double"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:visibility="visible"
                 app:contentPadding="@dimen/default_padding"
@@ -184,7 +182,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/about_privacy_policy"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/colorAccentText" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/termsLayout"
+                style="@style/CardViewDefault"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_padding_double"
+                android:layout_marginTop="@dimen/default_padding"
+                android:layout_marginEnd="@dimen/default_padding_double"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="visible"
+                app:contentPadding="@dimen/default_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/privacyPolicyLayout">
+
+                <TextView
+                    android:id="@+id/termsTextView"
+                    style="@style/TextPlain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/terms_and_conditions"
                     android:textColor="@color/colorAccentText" />
 
             </androidx.cardview.widget.CardView>

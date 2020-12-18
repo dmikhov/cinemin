@@ -21,5 +21,6 @@ fun EditText.hideKeyboard() {
         val manager = activity
             .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         manager?.hideSoftInputFromWindow(focus.windowToken, 0)
+        clearFocus()
     }
 }

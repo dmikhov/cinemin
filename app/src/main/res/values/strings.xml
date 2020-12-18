@@ -27,16 +27,15 @@
 
     <string name="start_typing_hint">Just start typing the title of the movie you want and we\'ll find information about it for you 😉</string>
     <string name="error_no_result">Unfortunately we cannot find the movie you are searching for 😔</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_conditions">Terms &amp; Conditions</string>
 
     <string name="about_description">Cinemin App shows various information about movies and calculates their budget and revenue in 2020 dollars according to the inflation and purchasing power. This allows you to see the change in budget or box office of a film and compare multiple films made in different years by their real price. </string>
     <string name="about_version">App Version: %s</string>
     <string name="about_title">About App</string>
-    <string name="about_privacy_policy">Privacy Policy</string>
     <string name="about_app_support">App Support</string>
     <string name="about_email">madlessdev@gmail.com</string>
     <string name="about_email_selector_title">Select app</string>
-    <string name="about_flaticon_url">https://www.flaticon.com/</string>
-    <string name="about_tmdb_url">https://www.themoviedb.org/</string>
     <string name="about_attribution">Attribution</string>
     <string name="about_tmdb_attribution">
         <![CDATA[

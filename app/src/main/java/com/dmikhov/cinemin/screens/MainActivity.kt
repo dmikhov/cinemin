@@ -2,10 +2,12 @@ package com.dmikhov.cinemin.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dmikhov.cinemin.Constants
 import com.dmikhov.cinemin.R
 import com.dmikhov.cinemin.screens.about.AboutFragment
 import com.dmikhov.cinemin.screens.movie.MovieFragment
 import com.dmikhov.cinemin.screens.search.SearchFragment
+import com.dmikhov.cinemin.screens.web.WebViewFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,14 @@ class MainActivity : AppCompatActivity() {
         val aboutFragment = AboutFragment.newInstance()
         supportFragmentManager.beginTransaction()
             .add(R.id.rootFragmentContainer, aboutFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun openWebFragment(title: String, url: String) {
+        val fragment = WebViewFragment.newInstance(title, url)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.rootFragmentContainer, fragment)
             .addToBackStack(null)
             .commit()
     }

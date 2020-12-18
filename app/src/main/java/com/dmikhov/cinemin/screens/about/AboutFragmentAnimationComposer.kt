@@ -23,6 +23,8 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
             clear(supportLayout.id, ConstraintSet.END)
             clear(privacyPolicyLayout.id, ConstraintSet.START)
             clear(privacyPolicyLayout.id, ConstraintSet.END)
+            clear(termsLayout.id, ConstraintSet.START)
+            clear(termsLayout.id, ConstraintSet.END)
 
             connect(
                 descriptionLayout.id,
@@ -50,6 +52,13 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
                 ConstraintSet.START,
                 ConstraintSet.PARENT_ID,
                 ConstraintSet.END,
+                0
+            )
+            connect(
+                termsLayout.id,
+                ConstraintSet.END,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.START,
                 0
             )
 
@@ -71,6 +80,8 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
             clear(supportLayout.id, ConstraintSet.END)
             clear(privacyPolicyLayout.id, ConstraintSet.START)
             clear(privacyPolicyLayout.id, ConstraintSet.END)
+            clear(termsLayout.id, ConstraintSet.START)
+            clear(termsLayout.id, ConstraintSet.END)
 
             connect(
                 descriptionLayout.id,
@@ -86,7 +97,6 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
                 ConstraintSet.END,
                 defaultPaddingDouble
             )
-
             connect(
                 tmdbAttributionLayout.id,
                 ConstraintSet.START,
@@ -101,7 +111,6 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
                 ConstraintSet.END,
                 defaultPaddingDouble
             )
-
             connect(
                 supportLayout.id,
                 ConstraintSet.START,
@@ -116,7 +125,6 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
                 ConstraintSet.END,
                 defaultPaddingDouble
             )
-
             connect(
                 privacyPolicyLayout.id,
                 ConstraintSet.START,
@@ -126,6 +134,20 @@ class AboutFragmentAnimationComposer (fragmentView: View): BaseFragmentAnimation
             )
             connect(
                 privacyPolicyLayout.id,
+                ConstraintSet.END,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.END,
+                defaultPaddingDouble
+            )
+            connect(
+                termsLayout.id,
+                ConstraintSet.START,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.START,
+                defaultPaddingDouble
+            )
+            connect(
+                termsLayout.id,
                 ConstraintSet.END,
                 ConstraintSet.PARENT_ID,
                 ConstraintSet.END,
