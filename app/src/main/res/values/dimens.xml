@@ -19,4 +19,5 @@
     <dimen name="font_medium_large">18sp</dimen>
     <dimen name="font_large">20sp</dimen>
     <dimen name="font_very_large">22sp</dimen>
+    <dimen name="font_app_title">32sp</dimen>
 </resources>
