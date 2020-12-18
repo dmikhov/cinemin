@@ -84,7 +84,7 @@ class MovieFragment : BaseFragment() {
         placeholderBackgroundImageView.setStartCropMatrix()
         movieBackgroundImageView.visibility = View.GONE
         placeholderBackgroundImageView.visibility = View.VISIBLE
-        animationComposer.hideMovieDetails()
+        animationComposer.hide()
     }
 
     private fun populateMovieDetails(movie: MovieDetailsUI) {
@@ -157,7 +157,7 @@ class MovieFragment : BaseFragment() {
                         movieBackgroundImageView.setImageBitmap(resource.blur())
                         movieBackgroundImageView.visibility = View.VISIBLE
                         placeholderBackgroundImageView.visibility = View.GONE
-                        animationComposer.animateMovieDetailsAppearing()
+                        animationComposer.show()
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) {
@@ -167,7 +167,7 @@ class MovieFragment : BaseFragment() {
                 })
         } else {
             posterImageView.setImageBitmap(null) // set placeholder
-            animationComposer.animateMovieDetailsAppearing()
+            animationComposer.show()
         }
     }
 

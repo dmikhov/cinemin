@@ -5,13 +5,14 @@ import android.transition.TransitionManager
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintSet
 import com.dmikhov.cinemin.R
+import com.dmikhov.cinemin.animation.BaseFragmentAnimationComposer
 import com.dmikhov.cinemin.animation.LittleBounceInterpolator
 import kotlinx.android.synthetic.main.fragment_movie.view.*
 
 class MovieFragmentAnimationComposer(
-    private val fragmentView: View,
-) {
-    fun hideMovieDetails() = with(fragmentView) {
+    fragmentView: View,
+): BaseFragmentAnimationComposer(fragmentView) {
+    override fun hide() = with(fragmentView) {
         val constraintSet = ConstraintSet()
         with(constraintSet) {
             clone(movieConstraintLayout)
@@ -85,7 +86,7 @@ class MovieFragmentAnimationComposer(
         }
     }
 
-    fun animateMovieDetailsAppearing() = with(fragmentView) {
+    override fun show() = with(fragmentView) {
         val defaultPadding = resources.getDimension(R.dimen.default_padding).toInt()
 
         val constraintSet = ConstraintSet()
@@ -212,9 +213,5 @@ class MovieFragmentAnimationComposer(
 
         TransitionManager.beginDelayedTransition(movieConstraintLayout, transition)
         constraintSet.applyTo(movieConstraintLayout)
-    }
-
-    companion object {
-        private const val APPEARING_ANIMATION_DURATION = 700L
     }
 }

@@ -3,11 +3,11 @@ package com.dmikhov.cinemin.screens.about
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.dmikhov.cinemin.BuildConfig
 import com.dmikhov.cinemin.R
 import com.dmikhov.cinemin.extensions.setHtmlText
 import com.dmikhov.cinemin.extensions.setStartCropMatrix
@@ -18,6 +18,9 @@ import java.util.*
 
 
 class AboutFragment: BaseFragment() {
+    private lateinit var animationComposer: AboutFragmentAnimationComposer
+    private val mainHandler = Handler()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,6 +31,7 @@ class AboutFragment: BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        animationComposer = AboutFragmentAnimationComposer(view)
         populateViews()
     }
 
@@ -51,6 +55,10 @@ class AboutFragment: BaseFragment() {
         }
         privacyPolicyLayout.setOnClickListener {
 
+        }
+        animationComposer.hide()
+        mainHandler.post {
+            animationComposer.show()
         }
     }
 
