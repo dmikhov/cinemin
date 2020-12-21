@@ -5,6 +5,7 @@ import android.os.Handler
 import android.view.*
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.manager.SupportRequestManagerFragment
 import com.dmikhov.cinemin.R
 import com.dmikhov.cinemin.extensions.*
 import com.dmikhov.cinemin.screens.base.BaseFragment
@@ -73,7 +74,11 @@ class SearchFragment : BaseFragment() {
                 searchMovieViewModel.searchMovies(movieTitle)
             }, SEARCH_DELAY)
         }
-        searchEditText.showKeyboard()
+        val searchIsOnTopOfStack = parentFragmentManager.fragments
+            .lastOrNull { it::class.java != SupportRequestManagerFragment::class.java }?.javaClass == javaClass
+        if (searchIsOnTopOfStack) {
+            searchEditText.showKeyboard()
+        }
         moviesAdapter.onMovieClicked = { movie ->
             searchEditText.hideKeyboard()
             mainActivity?.openHomeFragment(movie.id, movie.title)
@@ -85,7 +90,7 @@ class SearchFragment : BaseFragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.menu_item_about -> {
                 searchEditText.hideKeyboard()
                 mainActivity?.openAboutFragment()
