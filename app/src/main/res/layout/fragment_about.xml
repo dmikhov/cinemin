@@ -131,6 +131,14 @@
                         android:textSize="@dimen/font_medium_small"
                         tools:text="@string/about_flaticon_attribution" />
 
+                    <TextView
+                        android:id="@+id/pixabayAttributionTextView"
+                        style="@style/TextPlain"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/default_padding_half"
+                        android:textSize="@dimen/font_medium_small"
+                        tools:text="@string/about_pixabay_attribution" />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

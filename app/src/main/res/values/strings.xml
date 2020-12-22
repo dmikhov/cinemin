@@ -47,6 +47,11 @@
             Icons made by <a href="https://www.flaticon.com/authors/fjstudio" title="fjstudio">fjstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
         ]]>
     </string>
+    <string name="about_pixabay_attribution">
+        <![CDATA[
+            Background image from <a href="https://www.pixabay.com/" title="Pixabay">www.pixabay.com</a>
+        ]]>
+    </string>
 
     <string name="popup_error">Error</string>
     <string name="popup_ok">OK</string>

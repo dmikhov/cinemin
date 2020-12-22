@@ -9,7 +9,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.dmikhov.cinemin.R
 import com.dmikhov.cinemin.screens.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_about.*
 import kotlinx.android.synthetic.main.fragment_web.*
 import kotlinx.android.synthetic.main.fragment_web.toolbar
 

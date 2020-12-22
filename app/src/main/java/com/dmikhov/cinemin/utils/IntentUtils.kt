@@ -1,26 +1,27 @@
 package com.dmikhov.cinemin.utils
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import com.dmikhov.cinemin.R
 
 object IntentUtils {
-    fun openInWebBrowser(activity: Activity, url: String) {
+    fun openInWebBrowser(context: Context, url: String) {
         val intent = Intent()
         intent.action = Intent.ACTION_VIEW
         intent.data = Uri.parse(url)
-        activity.startActivity(intent)
+        context.startActivity(intent)
     }
 
-    fun openEmailApp(activity: Activity, email: String, text: String? = null, subject: String? = null) {
+    fun openEmailApp(context: Context, email: String, text: String? = null, subject: String? = null) {
         val intent = Intent(
             Intent.ACTION_SENDTO, Uri.fromParts(
             "mailto", email, null))
         intent.putExtra(Intent.EXTRA_SUBJECT, subject)
         intent.putExtra(Intent.EXTRA_TEXT, text)
-        activity.startActivity(
+        context.startActivity(
             Intent.createChooser(intent,
-            activity.getString(R.string.about_email_selector_title)))
+                context.getString(R.string.about_email_selector_title)))
     }
 }

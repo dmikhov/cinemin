@@ -14,12 +14,13 @@ import com.dmikhov.cinemin.extensions.setHtmlText
 import com.dmikhov.cinemin.extensions.setStartCropMatrix
 import com.dmikhov.cinemin.screens.base.BaseFragment
 import com.dmikhov.cinemin.screens.web.WebViewFragment
+import com.dmikhov.cinemin.utils.HtmlLinksUtils
 import com.dmikhov.cinemin.utils.IntentUtils
 import kotlinx.android.synthetic.main.fragment_about.*
 import java.util.*
 
 
-class AboutFragment: BaseFragment() {
+class AboutFragment : BaseFragment() {
     private lateinit var animationComposer: AboutFragmentAnimationComposer
     private val mainHandler = Handler()
 
@@ -47,24 +48,48 @@ class AboutFragment: BaseFragment() {
             tmdbAttributionTextView.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
             flaticonAttributionTextView.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
         }
-        tmdbAttributionTextView.setHtmlText(getString(R.string.about_tmdb_attribution))
-        flaticonAttributionTextView.setHtmlText(getString(R.string.about_flaticon_attribution))
-        val appNameTypeface = Typeface.createFromAsset(activity?.assets, Constants.APP_NAME_FONT_PATH)
+        HtmlLinksUtils.linkifyHtmlTextView(
+            tmdbAttributionTextView,
+            getString(R.string.about_tmdb_attribution),
+            this::onLinkClicked
+        )
+        HtmlLinksUtils.linkifyHtmlTextView(
+            flaticonAttributionTextView,
+            getString(R.string.about_flaticon_attribution),
+            this::onLinkClicked
+        )
+        HtmlLinksUtils.linkifyHtmlTextView(
+            pixabayAttributionTextView,
+            getString(R.string.about_pixabay_attribution),
+            this::onLinkClicked
+        )
+        val appNameTypeface =
+            Typeface.createFromAsset(activity?.assets, Constants.APP_NAME_FONT_PATH)
         appNameTextView.typeface = appNameTypeface
         appNameTextView.text = getString(R.string.app_name).toLowerCase(Locale.US)
         supportLayout.setOnClickListener {
-            IntentUtils.openEmailApp(requireActivity(), getString(R.string.about_app_support))
+            IntentUtils.openEmailApp(requireActivity(), Constants.SUPPORT_EMAIL)
         }
         privacyPolicyLayout.setOnClickListener {
-            mainActivity?.openWebFragment(getString(R.string.privacy_policy), Constants.PRIVACY_POLICY_URL)
+            mainActivity?.openWebFragment(
+                getString(R.string.privacy_policy),
+                Constants.PRIVACY_POLICY_URL
+            )
         }
         termsLayout.setOnClickListener {
-            mainActivity?.openWebFragment(getString(R.string.terms_and_conditions), Constants.TERMS_AND_CONDITIONS_URL)
+            mainActivity?.openWebFragment(
+                getString(R.string.terms_and_conditions),
+                Constants.TERMS_AND_CONDITIONS_URL
+            )
         }
         animationComposer.hide()
         mainHandler.post {
             animationComposer.show()
         }
+    }
+
+    private fun onLinkClicked(url: String) {
+        IntentUtils.openInWebBrowser(requireContext(), url)
     }
 
     companion object {
