@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun openHomeFragment(movieId: Int?, movieTitle: String?) {
+    fun openHomeFragment(movieId: Long?, movieTitle: String?) {
         val homeFragment = MovieFragment.newInstance(movieId, movieTitle)
         supportFragmentManager.beginTransaction()
             .add(R.id.rootFragmentContainer, homeFragment)

@@ -1,7 +1,7 @@
 package com.dmikhov.entity
 
 class MovieDetailsUI(
-    val id: Int,
+    val id: Long,
     val title: String?,
     val posterUrl: String?,
     val releaseDate: String?,

@@ -26,7 +26,7 @@ class RetrofitMovieService (
         }
     }
 
-    override fun getMovie(movieId: Int): Result<Movie> {
+    override fun getMovie(movieId: Long): Result<Movie> {
         return try {
             val response = moviesApi.getMovieById(movieId, WebConstants.MOVIEDB_API_KEY).execute()
             if (response.isSuccessful) {
@@ -41,7 +41,7 @@ class RetrofitMovieService (
         }
     }
 
-    override fun getCredits(movieId: Int): Result<MovieCredits> {
+    override fun getCredits(movieId: Long): Result<MovieCredits> {
         return try {
             val response = moviesApi.getCredits(movieId, WebConstants.MOVIEDB_API_KEY).execute()
             if (response.isSuccessful) {

@@ -5,7 +5,7 @@ import com.dmikhov.repository.web.WebConstants
 import com.google.gson.annotations.SerializedName
 
 data class SearchResultWebEntity(
-    val id: Int,
+    val id: Long,
     @SerializedName("media_type")
     val mediaType: String,
     val title: String?,

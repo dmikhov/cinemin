@@ -5,15 +5,15 @@ import com.dmikhov.repository.web.WebConstants
 import com.google.gson.annotations.SerializedName
 
 data class WebMovie(
-    val id: Int,
+    val id: Long,
     val title: String?,
     @SerializedName("poster_path")
     val posterPath: String?,
     @SerializedName("release_date")
     val releaseDate: String?,
-    val budget: Int?,
-    val revenue: Int?,
-    val runtime: Int?,
+    val budget: Long?,
+    val revenue: Long?,
+    val runtime: Long?,
     @SerializedName("vote_average")
     val rating: Float?,
     val adult: Boolean,
@@ -24,12 +24,12 @@ data class WebMovie(
         val posterUrl = posterPath?.let {
             WebConstants.MOVIEDB_IMAGE_PATTERN.format(posterPath)
         }
-        val nullableBudget = if (budget == 0) {
+        val nullableBudget = if (budget == 0L) {
             null
         } else {
             budget
         }
-        val nullableRevenue = if (revenue == 0) {
+        val nullableRevenue = if (revenue == 0L) {
             null
         } else {
             revenue

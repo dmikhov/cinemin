@@ -6,6 +6,6 @@ import com.dmikhov.usecases.entities.Result
 
 interface IWebMovieService {
     fun searchMovies(title: String): Result<List<Movie>>
-    fun getMovie(movieId: Int): Result<Movie>
-    fun getCredits(movieId: Int): Result<MovieCredits>
+    fun getMovie(movieId: Long): Result<Movie>
+    fun getCredits(movieId: Long): Result<MovieCredits>
 }

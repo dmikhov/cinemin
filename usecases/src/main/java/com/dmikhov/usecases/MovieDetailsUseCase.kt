@@ -7,7 +7,7 @@ import com.dmikhov.usecases.repository.IMoviesRepository
 class MovieDetailsUseCase(
     private val moviesRepository: IMoviesRepository
 ) {
-    fun getMovieDetails(movieId: Int): Result<FullMovieDetails> {
+    fun getMovieDetails(movieId: Long): Result<FullMovieDetails> {
         val movieResult = moviesRepository.getMovie(movieId)
         val creditsResult = moviesRepository.getCredits(movieId)
         return if (movieResult.isSuccess() && creditsResult.isSuccess()) {

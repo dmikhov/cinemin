@@ -21,7 +21,7 @@ class MovieDetailViewModel(
     val movieDetailsLive = MutableLiveData<MovieDetailsUI>()
     val onErrorInvoked = ConsumableSingleEventLiveData<Boolean>()
 
-    fun loadDetails(movieId: Int) {
+    fun loadDetails(movieId: Long) {
         viewModelScope.launch(Dispatchers.IO) {
             isLoadingLive.postValue(true)
             val result = detailsUseCase.getMovieDetails(movieId)

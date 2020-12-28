@@ -18,13 +18,13 @@ interface RetrofitMovieServiceApi {
 
     @GET(MOVIE)
     fun getMovieById(
-        @Path(MOVIE_ID_PATH) movieId: Int,
+        @Path(MOVIE_ID_PATH) movieId: Long,
         @Query(PARAM_API_KEY) apiKey: String,
     ): Call<WebMovie>
 
     @GET(CREDITS)
     fun getCredits(
-        @Path(MOVIE_ID_PATH) movieId: Int,
+        @Path(MOVIE_ID_PATH) movieId: Long,
         @Query(PARAM_API_KEY) apiKey: String
     ): Call<WebCreditsResponse>
 

@@ -22,7 +22,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MovieFragment : BaseFragment() {
     private lateinit var animationComposer: MovieFragmentAnimationComposer
     private val movieDetailsViewModel: MovieDetailViewModel by viewModel()
-    private var movieId: Int? = null
+    private var movieId: Long? = null
     private var movieTitle: String? = null
 
     override fun onCreateView(
@@ -43,7 +43,7 @@ class MovieFragment : BaseFragment() {
 
     private fun initData() {
         arguments?.apply {
-            movieId = getInt(ARG_MOVIE_ID)
+            movieId = getLong(ARG_MOVIE_ID)
             movieTitle = getString(ARG_MOVIE_TITLE)
         }
         movieId?.let {
@@ -174,11 +174,11 @@ class MovieFragment : BaseFragment() {
     companion object {
         private const val ARG_MOVIE_ID = "ARG_MOVIE_ID"
         private const val ARG_MOVIE_TITLE = "ARG_MOVIE_TITLE"
-        private const val UNKNOWN_MOVIE_ID = -1
+        private const val UNKNOWN_MOVIE_ID = -1L
 
-        fun newInstance(movieId: Int? = null, movieTitle: String? = null): MovieFragment = MovieFragment().apply {
+        fun newInstance(movieId: Long? = null, movieTitle: String? = null): MovieFragment = MovieFragment().apply {
             arguments = Bundle().apply {
-                putInt(ARG_MOVIE_ID, movieId ?: UNKNOWN_MOVIE_ID)
+                putLong(ARG_MOVIE_ID, movieId ?: UNKNOWN_MOVIE_ID)
                 putString(ARG_MOVIE_TITLE, movieTitle)
             }
         }

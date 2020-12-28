@@ -13,11 +13,11 @@ class MoviesRepository(
         return webMovieService.searchMovies(title)
     }
 
-    override fun getMovie(movieId: Int): Result<Movie> {
+    override fun getMovie(movieId: Long): Result<Movie> {
         return webMovieService.getMovie(movieId)
     }
 
-    override fun getCredits(movieId: Int): Result<MovieCredits> {
+    override fun getCredits(movieId: Long): Result<MovieCredits> {
         return webMovieService.getCredits(movieId)
     }
 }
