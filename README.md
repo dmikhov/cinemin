@@ -26,14 +26,14 @@ Cinemin is a free app that shows various information about movies and calculates
 
 ## Architecture
 
-* Relations between modules:  
-<br> 
-![Modules Relations](readme_res/clean_arch_modules_relations.png)  
-<br> 
-* Short example of relations between classes:  
-<br> 
-![Classes Relations Example](readme_res/clean_arch_classes_example.png)  
-<br> 
+* Relations between modules:
+<br/>
+![Modules Relations](readme_res/clean_arch_modules_relations.png)
+<br/>
+* Short example of relations between classes:
+<br/>
+![Classes Relations Example](readme_res/clean_arch_classes_example.png)
+<br/>
 
 ## Attribution
 
