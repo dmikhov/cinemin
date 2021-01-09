@@ -2,7 +2,9 @@
 # Cinemin
 Cinemin is a free app that shows various information about movies and calculates their budget & revenue in 2021 dollars according to the inflation and purchasing power. This allows you to see the change in budget or box office of a film and compare multiple films made in different years by their real price.
 
-<a href='https://play.google.com/store/apps/details?id=com.dmikhov.cinemin'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="70"/></a>
+<a href='https://play.google.com/store/apps/details?id=com.dmikhov.cinemin&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="60"/>
+</a>
 
 ## Demo
 
@@ -25,11 +27,18 @@ Cinemin is a free app that shows various information about movies and calculates
 ## Architecture
 1. Relations between modules:
 
+
 ![Modules Relations](readme_res/clean_arch_modules_relations.png)
+
+
 
 2. Short example of relations between classes:
 
+
+
 ![Classes Relations Example](readme_res/clean_arch_classes_example.png)
+
+
 
 ## Attribution
 
