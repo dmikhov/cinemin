@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283178622976",
+    "project_id": "cineminapp",
+    "storage_bucket": "cineminapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283178622976:android:d9c4e40ab435c4d7d0f8e5",
+        "android_client_info": {
+          "package_name": "com.dmikhov.cinemin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283178622976-p61f3lrc30c9p4q5d62s54g1rb1d9qib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvy9fqOTaEBtll_Oivc6bJX9ZZUtxnuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283178622976-p61f3lrc30c9p4q5d62s54g1rb1d9qib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
