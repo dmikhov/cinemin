@@ -26,15 +26,14 @@ Cinemin is a free app that shows various information about movies and calculates
 
 ## Architecture
 
-* Relations between modules:
-<br/>
+* Relations between modules:\
+\
 ![Modules Relations](readme_res/clean_arch_modules_relations.png)
-<br/>
-* Short example of relations between classes:
-<br/>
+\
+* Short example of relations between classes:\
+\
 ![Classes Relations Example](readme_res/clean_arch_classes_example.png)
-<br/>
-
+\
 ## Attribution
 
 1. This product uses the TMDb API but is not endorsed or certified by TMDb. For more information visit <a href="https://https://www.themoviedb.org/">https://www.themoviedb.org</a>
