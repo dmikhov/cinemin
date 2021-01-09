@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dmikhov.entities.movie.Credit
 import com.dmikhov.entity.MovieDetailsUI
-import com.dmikhov.usecases.CalculateWeightedPriceUseCase
-import com.dmikhov.usecases.MovieDetailsUseCase
+import com.dmikhov.domain.CalculateWeightedPriceUseCase
+import com.dmikhov.domain.MovieDetailsUseCase
 import com.dmikhov.utils.ConsumableSingleEventLiveData
 import com.dmikhov.utils.DateUtils
 import com.dmikhov.utils.toCurrency

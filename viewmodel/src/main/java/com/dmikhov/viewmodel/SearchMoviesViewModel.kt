@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dmikhov.entities.movie.Movie
-import com.dmikhov.usecases.SearchMoviesUseCase
+import com.dmikhov.domain.SearchMoviesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

@@ -1,6 +1,6 @@
-include ':repository'
+include ':data'
 include ':viewmodel'
-include ':usecases'
+include ':domain'
 include ':entities'
 include ':app'
 rootProject.name = "Cinemin"

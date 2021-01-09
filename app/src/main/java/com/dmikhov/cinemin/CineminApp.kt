@@ -2,9 +2,9 @@ package com.dmikhov.cinemin
 
 import android.app.Application
 import com.dmikhov.di.viewModelModule
-import com.dmikhov.repository.di.apiModule
-import com.dmikhov.repository.di.repositoryModule
-import com.dmikhov.usecases.di.usecaseModule
+import com.dmikhov.data.di.apiModule
+import com.dmikhov.data.di.repositoryModule
+import com.dmikhov.domain.di.usecaseModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
