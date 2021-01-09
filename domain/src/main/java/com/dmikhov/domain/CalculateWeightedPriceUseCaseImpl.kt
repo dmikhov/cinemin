@@ -5,7 +5,7 @@ import com.dmikhov.domain.repository.MoneyRepository
 
 /**
  * Calculates weighted price due to inflation data. Show how the price has changed
- * since startYear until endYear.
+ * since startYear until endYear. Calculation skips inflation for first year.
  */
 class CalculateWeightedPriceUseCaseImpl(
     private val moneyRepository: MoneyRepository
