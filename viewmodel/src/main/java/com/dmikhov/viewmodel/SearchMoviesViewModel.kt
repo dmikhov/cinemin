@@ -3,8 +3,8 @@ package com.dmikhov.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dmikhov.domain.abs.SearchMoviesUseCase
 import com.dmikhov.entities.movie.Movie
-import com.dmikhov.domain.SearchMoviesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

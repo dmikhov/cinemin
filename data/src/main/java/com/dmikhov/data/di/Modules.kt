@@ -1,14 +1,14 @@
 package com.dmikhov.data.di
 
 import com.dmikhov.data.BuildConfig
-import com.dmikhov.data.MoneyRepository
-import com.dmikhov.data.MoviesRepository
-import com.dmikhov.data.web.IWebMovieService
+import com.dmikhov.data.MoneyRepositoryImpl
+import com.dmikhov.data.MoviesRepositoryImpl
+import com.dmikhov.data.web.WebMovieService
 import com.dmikhov.data.web.retrofit.RetrofitMovieServiceApi
 import com.dmikhov.data.web.WebConstants
-import com.dmikhov.data.web.retrofit.RetrofitMovieService
-import com.dmikhov.domain.repository.IMoneyRepository
-import com.dmikhov.domain.repository.IMoviesRepository
+import com.dmikhov.data.web.retrofit.RetrofitMovieServiceImpl
+import com.dmikhov.domain.repository.MoneyRepository
+import com.dmikhov.domain.repository.MoviesRepository
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -46,16 +46,16 @@ val apiModule = module {
     single<RetrofitMovieServiceApi> {
         get<Retrofit>().create(RetrofitMovieServiceApi::class.java)
     }
-    single<IWebMovieService> {
-        RetrofitMovieService(get())
+    single<WebMovieService> {
+        RetrofitMovieServiceImpl(get())
     }
 }
 
 val repositoryModule = module {
-    single<IMoviesRepository> {
-        MoviesRepository(get())
+    single<MoviesRepository> {
+        MoviesRepositoryImpl(get())
     }
-    single<IMoneyRepository> {
-        MoneyRepository(androidContext())
+    single<MoneyRepository> {
+        MoneyRepositoryImpl(androidContext())
     }
 }

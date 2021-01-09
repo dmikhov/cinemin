@@ -1,13 +1,14 @@
 package com.dmikhov.domain
 
+import com.dmikhov.domain.abs.MovieDetailsUseCase
 import com.dmikhov.entities.movie.FullMovieDetails
 import com.dmikhov.domain.entities.Result
-import com.dmikhov.domain.repository.IMoviesRepository
+import com.dmikhov.domain.repository.MoviesRepository
 
-class MovieDetailsUseCase(
-    private val moviesRepository: IMoviesRepository
-) {
-    fun getMovieDetails(movieId: Long): Result<FullMovieDetails> {
+class MovieDetailsUseCaseImpl(
+    private val moviesRepository: MoviesRepository
+): MovieDetailsUseCase {
+    override fun getMovieDetails(movieId: Long): Result<FullMovieDetails> {
         val movieResult = moviesRepository.getMovie(movieId)
         val creditsResult = moviesRepository.getCredits(movieId)
         return if (movieResult.isSuccess() && creditsResult.isSuccess()) {

@@ -4,13 +4,13 @@ import com.dmikhov.domain.entities.ErrorCodes
 import com.dmikhov.entities.movie.Movie
 import com.dmikhov.entities.movie.MovieCredits
 import com.dmikhov.domain.entities.Result
-import com.dmikhov.data.web.IWebMovieService
+import com.dmikhov.data.web.WebMovieService
 import com.dmikhov.data.web.WebConstants
 import com.dmikhov.data.web.entities.mapToMovies
 
-class RetrofitMovieService (
+class RetrofitMovieServiceImpl (
     private val moviesApi: RetrofitMovieServiceApi,
-): IWebMovieService {
+): WebMovieService {
     override fun searchMovies(title: String): Result<List<Movie>> {
         return try {
             val response = moviesApi.searchForMoviesAndPeople(WebConstants.MOVIEDB_API_KEY, title).execute()

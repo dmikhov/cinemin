@@ -3,12 +3,12 @@ package com.dmikhov.data
 import com.dmikhov.entities.movie.Movie
 import com.dmikhov.entities.movie.MovieCredits
 import com.dmikhov.domain.entities.Result
-import com.dmikhov.data.web.IWebMovieService
-import com.dmikhov.domain.repository.IMoviesRepository
+import com.dmikhov.data.web.WebMovieService
+import com.dmikhov.domain.repository.MoviesRepository
 
-class MoviesRepository(
-    private val webMovieService: IWebMovieService
-): IMoviesRepository {
+class MoviesRepositoryImpl(
+    private val webMovieService: WebMovieService
+): MoviesRepository {
     override fun searchMovie(title: String): Result<List<Movie>> {
         return webMovieService.searchMovies(title)
     }

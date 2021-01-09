@@ -2,13 +2,13 @@ package com.dmikhov.data
 
 import android.content.Context
 import com.dmikhov.entities.money.Inflation
-import com.dmikhov.domain.repository.IMoneyRepository
+import com.dmikhov.domain.repository.MoneyRepository
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class MoneyRepository(
+class MoneyRepositoryImpl(
     private val context: Context
-) : IMoneyRepository {
+) : MoneyRepository {
     override fun getUSDInflation(): List<Inflation> {
         val inputStream = context.assets.open(INFLATION_DATA_FILE_NAME)
         val reader = BufferedReader(InputStreamReader(inputStream))

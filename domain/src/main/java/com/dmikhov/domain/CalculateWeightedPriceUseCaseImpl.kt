@@ -1,15 +1,16 @@
 package com.dmikhov.domain
 
-import com.dmikhov.domain.repository.IMoneyRepository
+import com.dmikhov.domain.abs.CalculateWeightedPriceUseCase
+import com.dmikhov.domain.repository.MoneyRepository
 
 /**
  * Calculates weighted price due to inflation data. Show how the price has changed
  * since startYear until endYear.
  */
-class CalculateWeightedPriceUseCase(
-    private val moneyRepository: IMoneyRepository
-) {
-    fun calculateWeightedPrice(price: Double?, startYear: Int?, endYear: Int?): Double? {
+class CalculateWeightedPriceUseCaseImpl(
+    private val moneyRepository: MoneyRepository
+): CalculateWeightedPriceUseCase {
+    override fun calculateWeightedPrice(price: Double?, startYear: Int?, endYear: Int?): Double? {
         if (price == null || startYear == null || endYear == null) {
             return null
         }

@@ -2,6 +2,6 @@ package com.dmikhov.domain.repository
 
 import com.dmikhov.entities.money.Inflation
 
-interface IMoneyRepository {
+interface MoneyRepository {
     fun getUSDInflation(): List<Inflation>
 }
